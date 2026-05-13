@@ -214,6 +214,19 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
 .sponsor-name{font-size:.7rem;letter-spacing:.08em;color:var(--muted);text-align:center;line-height:1.4;}
 @media(max-width:768px){.sponsors-grid{gap:1rem;}.sponsor-card{width:140px;padding:1.2rem 1rem;}}
 
+
+/* ── BLOC LIEU ── */
+.venue-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--glass);margin-top:1rem;}
+.venue-visual{background:linear-gradient(135deg,rgba(0,85,164,.15) 0%,rgba(13,27,42,.9) 100%);padding:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.venue-pin{font-size:3rem;filter:drop-shadow(0 4px 12px rgba(200,169,110,.4));}
+.venue-info h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--light);margin-bottom:.3rem;}
+.venue-info p{font-size:.82rem;color:var(--muted);line-height:1.6;}
+.venue-info .venue-metro{font-size:.75rem;color:var(--accent);margin-top:.4rem;}
+.venue-footer{padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:rgba(0,0,0,.1);}
+.venue-footer span{font-size:.72rem;color:var(--muted);}
+.btn-maps{padding:.55rem 1.4rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--navy);border:none;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s;}
+.btn-maps:hover{opacity:.85;}
+
 </style>
 </head>
 <body>
@@ -259,7 +272,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
     <p class="hero-sub">4èmes Rencontres Annuelles de la Collégiale d'Oncologie-Radiothérapie de l'AP-HP<br>Hôpitaux Henri Mondor · Pitié Salpêtrière · Saint-Louis · Tenon · HEGP</p>
     <div class="hero-info">
       <div class="hi-item"><div class="hi-label">Date</div><div class="hi-value">Vendredi 11 décembre 2026</div></div>
-      <div class="hi-item"><div class="hi-label">Lieu</div><div class="hi-value">Maison de la Chimie, Paris</div></div>
+      <div class="hi-item"><div class="hi-label">Lieu</div><div class="hi-value"><a href="https://maps.google.com/?q=Maison+de+la+Chimie+28+Rue+Saint-Dominique+75007+Paris" target="_blank" style="color:var(--light);text-decoration:none;">Maison de la Chimie, Paris 🗺️</a></div></div>
       <div class="hi-item"><div class="hi-label">Format</div><div class="hi-value">Journée complète</div></div>
     </div>
     <div class="hero-partner-logos">
@@ -316,7 +329,20 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
 
     <div class="prog-header-info">
       <div class="phi-item"><div class="phi-label">Date</div><div class="phi-value">Vendredi 11 décembre 2026</div></div>
-      <div class="phi-item"><div class="phi-label">Lieu</div><div class="phi-value">Maison de la Chimie · 28 Rue Saint-Dominique, 75007 Paris</div></div>
+      <div style="grid-column:1/-1;margin-top:.5rem;"><div class="venue-block">
+          <div class="venue-visual">
+            <div class="venue-pin">📍</div>
+            <div class="venue-info">
+              <h4>Maison de la Chimie</h4>
+              <p>28 Rue Saint-Dominique<br>75007 Paris, France</p>
+              <p class="venue-metro">🚇 Métro : Invalides (L8/L13) · Assemblée Nationale (L12)</p>
+            </div>
+          </div>
+          <div class="venue-footer">
+            <span>📅 Vendredi 11 décembre 2026</span>
+            <a href="https://maps.google.com/?q=Maison+de+la+Chimie+28+Rue+Saint-Dominique+75007+Paris" target="_blank" class="btn-maps">📍 Ouvrir dans Google Maps →</a>
+          </div>
+        </div></div>
       <div class="phi-item"><div class="phi-label">Organisation</div><div class="phi-value">Collégiale d'Oncologie-Radiothérapie de l'AP-HP</div></div>
     </div>
 
@@ -779,7 +805,24 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
     <div class="contact-grid">
       <div class="contact-card"><div class="contact-icon">📞</div><div class="contact-title">Téléphone</div><div class="contact-text">01.49.81.45.22</div></div>
       <div class="contact-card"><div class="contact-icon">📧</div><div class="contact-title">Email</div><div class="contact-text"><a href="mailto:fadila.chekiri@aphp.fr">fadila.chekiri@aphp.fr</a></div></div>
-      <div class="contact-card"><div class="contact-icon">📍</div><div class="contact-title">Lieu</div><div class="contact-text">Maison de la Chimie<br>28 Rue Saint-Dominique<br>75007 Paris</div></div>
+      <div class="contact-card" style="grid-column:1/-1;">
+        <div class="contact-icon">📍</div>
+        <div class="contact-title">Lieu</div>
+        <div class="venue-block">
+          <div class="venue-visual">
+            <div class="venue-pin">📍</div>
+            <div class="venue-info">
+              <h4>Maison de la Chimie</h4>
+              <p>28 Rue Saint-Dominique<br>75007 Paris, France</p>
+              <p class="venue-metro">🚇 Métro : Invalides (L8/L13) · Assemblée Nationale (L12)</p>
+            </div>
+          </div>
+          <div class="venue-footer">
+            <span>📅 Vendredi 11 décembre 2026</span>
+            <a href="https://maps.google.com/?q=Maison+de+la+Chimie+28+Rue+Saint-Dominique+75007+Paris" target="_blank" class="btn-maps">📍 Ouvrir dans Google Maps →</a>
+          </div>
+        </div>
+      </div>
       <div class="contact-card"><div class="contact-icon">🏥</div><div class="contact-title">Organisation</div><div class="contact-text">Collégiale d'Oncologie-Radiothérapie<br>Assistance Publique – Hôpitaux de Paris</div></div>
     </div>
   </div>
