@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0d1b2a;--deep:#1a2d42;--accent:#c8a96e;--accent2:#e8c97e;--aphp:#0055A4;--aphp2:#3A7DC9;
+  --navy:#061829;--deep:#0D2B4A;--accent:#0055A4;--accent2:#4A9FD4;--light:#E8F0F8;--muted:#6A8AA0;--gold:#c8a96e;--aphp:#0055A4;--aphp2:#4A9FD4;
   --light:#f4f0ea;--muted:#7a8a9a;--border:rgba(200,169,110,0.3);--glass:rgba(255,255,255,0.04);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -31,7 +31,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--navy);color:var(--ligh
 .alb .alb-cancel:hover{border-color:rgba(200,169,110,.4);color:#c8a96e;}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;background:rgba(13,27,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;height:70px;}
+nav{position:fixed;top:4px;left:0;right:0;z-index:1000;padding:0 2rem;background:rgba(13,27,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;height:70px;}
 .nav-logos{display:flex;align-items:center;gap:1rem;}
 .nav-logos img{height:36px;width:auto;object-fit:contain;opacity:.9;}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--accent);letter-spacing:.1em;}
@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;background:r
 .nav-admin:hover{border-color:var(--accent);color:var(--accent);}
 
 /* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 4rem;background:radial-gradient(ellipse at 30% 50%,rgba(0,85,164,.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(200,169,110,.06) 0%,transparent 50%),var(--navy);position:relative;}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7.5rem 2rem 4rem;background:radial-gradient(ellipse at 25% 50%,rgba(0,85,164,.18) 0%,transparent 60%),radial-gradient(ellipse at 75% 20%,rgba(74,159,212,.1) 0%,transparent 50%),var(--navy);position:relative;}
 .hero-badge{display:inline-block;background:rgba(0,85,164,.15);border:1px solid rgba(0,85,164,.3);color:#7ab0e8;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1rem;border-radius:20px;margin-bottom:1.5rem;}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:3.8rem;color:var(--light);line-height:1.15;margin-bottom:.5rem;}
 .hero-title em{color:var(--accent);font-style:italic;}
@@ -53,15 +53,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;background:r
 .hi-value{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--light);}
 .hero-partner-logos{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;}
 .hero-partner-logos img{max-height:55px;max-width:160px;object-fit:contain;filter:brightness(1.1);}
-.btn-primary{padding:.9rem 2.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--navy);border:none;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-block;}
+.btn-primary{padding:.9rem 2.5rem;background:linear-gradient(135deg,#0055A4,#4A9FD4);color:#fff;border:none;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-block;}
 .btn-primary:hover{opacity:.85;transform:translateY(-2px);}
-.btn-secondary{padding:.9rem 2.5rem;background:transparent;color:var(--accent);border:1px solid var(--border);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block;}
+.btn-secondary{padding:.9rem 2.5rem;background:transparent;color:var(--accent2);border:1px solid rgba(74,159,212,.4);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block;}
 .btn-secondary:hover{border-color:var(--accent);}
 
 /* ── SECTIONS ── */
 section{padding:6rem 2rem;}
 .container{max-width:1100px;margin:0 auto;}
-.section-label{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;}
+.section-label{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent2);margin-bottom:.8rem;}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--light);margin-bottom:3rem;line-height:1.2;}
 
 /* ── ABOUT ── */
@@ -166,7 +166,7 @@ section{padding:6rem 2rem;}
 footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2rem 2rem;}
 .footer-inner{max-width:1100px;margin:0 auto;}
 .footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
-.footer-brand div:first-child{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--accent);}
+.footer-brand div:first-child{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--accent2);}
 .footer-brand div:last-child{font-size:.65rem;color:var(--muted);letter-spacing:.1em;margin-top:.2rem;}
 .footer-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
 .footer-logos img{max-height:42px;max-width:120px;object-fit:contain;opacity:.75;transition:opacity .2s;}
@@ -298,6 +298,8 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
   .container{padding:0;}
   .about-grid,.form-grid{grid-template-columns:1fr;}
   .prog-row{grid-template-columns:58px 68px 1fr;gap:.3rem;padding:.7rem 1rem;}
+  .session-block{overflow-x:auto;}
+  #programme .container{padding:0 .5rem;}
   .prog-time{font-size:.68rem;}
   .prog-type{font-size:.6rem;padding:.15rem .4rem;}
   .prog-content{font-size:.76rem;}
@@ -359,6 +361,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
 </style>
 </head>
 <body>
+<div style="height:4px;background:linear-gradient(90deg,#0055A4 0%,#4A9FD4 50%,#0055A4 100%);position:fixed;top:0;left:0;right:0;z-index:10000;"></div>
 
 <!-- ── ADMIN LOGIN OVERLAY ── -->
 <div id="adminLoginOverlay">
