@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0d1b2a;--deep:#1a2d42;--accent:#c8a96e;--accent2:#e8c97e;
+  --navy:#0d1b2a;--deep:#1a2d42;--accent:#c8a96e;--accent2:#e8c97e;--aphp:#0055A4;--aphp2:#3A7DC9;
   --light:#f4f0ea;--muted:#7a8a9a;--border:rgba(200,169,110,0.3);--glass:rgba(255,255,255,0.04);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -195,13 +195,142 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
 .btn-danger{padding:.65rem 1.5rem;background:rgba(192,57,43,.12);color:#e05c5c;border:1px solid rgba(192,57,43,.25);border-radius:8px;font-size:.75rem;cursor:pointer;}
 
-@media(max-width:768px){
-  .about-grid,.form-grid{grid-template-columns:1fr;}
-  .nav-links{display:none;}
-  .hero-title{font-size:2.6rem;}
-  .footer-top{flex-direction:column;}
-  .prog-row{grid-template-columns:70px 80px 1fr;gap:.5rem;}
+
+/* ── AP-HP BLUE USAGE ── */
+.hero-badge{background:rgba(0,85,164,.15);border:1px solid rgba(0,85,164,.35);color:#3A7DC9;padding:.4rem 1.2rem;border-radius:20px;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:1.5rem;}
+.btn-inscription{padding:.75rem 2.2rem;background:linear-gradient(135deg,#0055A4,#3A7DC9);color:#fff;border:none;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s,transform .2s;box-shadow:0 4px 20px rgba(0,85,164,.35);}
+.btn-inscription:hover{opacity:.88;transform:translateY(-2px);}
+
+/* ── COUNTDOWN ── */
+#countdown{display:inline-flex;gap:1.2rem;margin-bottom:2.5rem;flex-wrap:wrap;justify-content:center;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:.3rem;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--accent);line-height:1;min-width:3rem;text-align:center;}
+.cd-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--border);align-self:center;margin-top:-.5rem;}
+
+/* ── INSCRIPTION STICKY BAR ── */
+#inscriptionBar{position:fixed;bottom:0;left:0;right:0;z-index:7000;background:linear-gradient(90deg,#0a1628 0%,rgba(10,22,40,.97) 100%);border-top:1px solid rgba(0,85,164,.4);padding:.9rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -8px 30px rgba(0,0,0,.4);transform:translateY(100%);transition:transform .4s ease;}
+#inscriptionBar.visible{transform:translateY(0);}
+#inscriptionBar p{font-size:.78rem;color:var(--muted);letter-spacing:.08em;margin:0;}
+#inscriptionBar p strong{color:var(--accent);}
+.bar-close-btn{background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;flex-shrink:0;}
+.bar-close-btn:hover{color:var(--accent);}
+
+/* ── HAMBURGER ── */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--muted);border-radius:2px;transition:all .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(13,27,42,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:999;padding:1rem 0;flex-direction:column;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{color:var(--muted);text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2rem;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s,background .2s;}
+.nav-mobile-menu a:hover{color:var(--accent);background:rgba(200,169,110,.04);}
+
+/* ── SUPER ADMIN ── */
+/* Colour Editor */
+#colorEditorPanel{position:fixed;top:0;right:-420px;width:400px;height:100vh;z-index:99999;background:#0f1e2d;border-left:1px solid rgba(200,169,110,.4);padding:1.5rem 1.2rem;overflow-y:auto;transition:right .3s ease;box-shadow:-20px 0 60px rgba(0,0,0,.5);}
+#colorEditorPanel.open{right:0;}
+#colorEditorPanel h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#c8a96e;margin-bottom:.3rem;}
+#colorEditorPanel .cep-sub{font-size:.65rem;letter-spacing:.18em;color:#7a8a9a;text-transform:uppercase;margin-bottom:1.4rem;display:block;}
+.cep-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;gap:.8rem;}
+.cep-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#f4f0ea;flex:1;}
+.cep-swatch{width:36px;height:36px;border-radius:8px;border:2px solid rgba(200,169,110,.3);cursor:pointer;padding:0;background:none;overflow:hidden;}
+.cep-swatch input[type=color]{width:150%;height:150%;border:none;outline:none;cursor:pointer;transform:translate(-15%,-15%);}
+.cep-hex{width:90px;padding:.4rem .6rem;background:rgba(255,255,255,.06);border:1px solid rgba(200,169,110,.25);border-radius:6px;color:#f4f0ea;font-size:.78rem;font-family:'Montserrat',sans-serif;}
+.cep-apply{width:100%;margin-top:.4rem;padding:.75rem;background:linear-gradient(135deg,#c8a96e,#e8c97e);border:none;border-radius:8px;color:#0d1b2a;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;}
+.cep-reset-btn{width:100%;margin-top:.5rem;padding:.6rem;background:transparent;border:1px solid rgba(200,169,110,.2);border-radius:8px;color:#7a8a9a;font-size:.72rem;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;font-family:'Montserrat',sans-serif;}
+.cep-reset-btn:hover{border-color:#c8a96e;color:#c8a96e;}
+.cep-close-x{position:absolute;top:1rem;right:1rem;background:none;border:none;color:#7a8a9a;font-size:1.2rem;cursor:pointer;}
+.cep-close-x:hover{color:#c8a96e;}
+.cep-divider{border:none;border-top:1px solid rgba(200,169,110,.15);margin:1.2rem 0;}
+/* Photo Manager */
+#photoManagerPanel{position:fixed;top:0;left:-450px;width:430px;height:100vh;z-index:99999;background:#0f1e2d;border-right:1px solid rgba(200,169,110,.4);padding:1.5rem 1.2rem;overflow-y:auto;transition:left .3s ease;box-shadow:20px 0 60px rgba(0,0,0,.5);}
+#photoManagerPanel.open{left:0;}
+#photoManagerPanel h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#c8a96e;margin-bottom:.3rem;}
+.pm-sub{font-size:.65rem;letter-spacing:.18em;color:#7a8a9a;text-transform:uppercase;margin-bottom:1.4rem;display:block;}
+.pm-close-x{position:absolute;top:1rem;right:1rem;background:none;border:none;color:#7a8a9a;font-size:1.2rem;cursor:pointer;}
+.pm-close-x:hover{color:#c8a96e;}
+.pm-drop{border:2px dashed rgba(200,169,110,.4);border-radius:12px;padding:2rem;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:1.2rem;}
+.pm-drop:hover,.pm-drop.drag-over{border-color:#c8a96e;background:rgba(200,169,110,.05);}
+.pm-drop p{font-size:.8rem;color:#7a8a9a;margin-top:.5rem;}
+.pm-drop span{font-size:2.5rem;}
+#pmGallery{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem;}
+.pm-thumb{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(200,169,110,.25);}
+.pm-thumb img{width:100%;height:100px;object-fit:cover;display:block;}
+.pm-thumb .pm-del{position:absolute;top:4px;right:4px;background:rgba(192,57,43,.85);color:white;border:none;width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:.8rem;line-height:24px;text-align:center;}
+.pm-thumb .pm-insert-btn{position:absolute;bottom:0;left:0;right:0;background:rgba(200,169,110,.9);color:#0d1b2a;border:none;padding:.3rem;font-size:.68rem;font-weight:700;text-transform:uppercase;cursor:pointer;letter-spacing:.06em;}
+.pm-section-select{width:100%;padding:.65rem .8rem;background:rgba(255,255,255,.05);border:1px solid rgba(200,169,110,.25);border-radius:8px;color:#f4f0ea;font-family:'Montserrat',sans-serif;font-size:.8rem;margin-bottom:.8rem;}
+.pm-insert-main{width:100%;padding:.75rem;background:linear-gradient(135deg,#c8a96e,#e8c97e);border:none;border-radius:8px;color:#0d1b2a;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;margin-bottom:.5rem;}
+/* Floating bar */
+#floatingEditorBar{position:fixed;bottom:20px;right:20px;z-index:999999;display:none;gap:8px;flex-wrap:wrap;max-width:420px;background:rgba(13,27,42,.96);border:1px solid rgba(200,169,110,.3);padding:12px;border-radius:14px;backdrop-filter:blur(8px);box-shadow:0 20px 60px rgba(0,0,0,.4);}
+#floatingEditorBar button{padding:.7rem .9rem;border:none;border-radius:8px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+.editor-toggle{background:rgba(200,169,110,.15);color:#c8a96e;}
+.editor-image{background:rgba(0,85,164,.15);color:#3A7DC9;}
+.editor-save{background:linear-gradient(135deg,#c8a96e,#e8c97e);color:#0d1b2a;}
+.edit-mode [contenteditable="true"]{outline:1px dashed #c8a96e!important;cursor:text;min-height:10px;}
+
+/* ══════════════════════════════════════════════
+   TABLET ≤ 1024px
+══════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .container{padding:0 1.5rem;}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .prog-row{grid-template-columns:80px 90px 1fr;gap:.6rem;}
 }
+
+/* ══════════════════════════════════════════════
+   MOBILE ≤ 768px
+══════════════════════════════════════════════ */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  nav{padding:0 1.2rem;}
+  #hero{padding:5rem 1.2rem 3rem;}
+  .hero-title{font-size:2rem;line-height:1.3;}
+  .hero-sub{font-size:.78rem;}
+  .hero-info{flex-direction:column;gap:.8rem;}
+  #countdown{gap:.7rem;}
+  .cd-num{font-size:1.8rem;}
+  .cd-sep{font-size:1.5rem;}
+  section{padding:4rem 1.2rem;}
+  .section-title{font-size:1.8rem;margin-bottom:2rem;}
+  .container{padding:0;}
+  .about-grid,.form-grid{grid-template-columns:1fr;}
+  .prog-row{grid-template-columns:58px 68px 1fr;gap:.3rem;padding:.7rem 1rem;}
+  .prog-time{font-size:.68rem;}
+  .prog-type{font-size:.6rem;padding:.15rem .4rem;}
+  .prog-content{font-size:.76rem;}
+  .day-tabs{gap:.3rem;}
+  .day-tab{padding:.5rem 1rem;font-size:.7rem;}
+  .speakers-grid{grid-template-columns:1fr 1fr;}
+  .sponsors-grid{gap:1rem;}
+  .sponsor-card{width:140px;padding:1.2rem 1rem;}
+  .footer-top{flex-direction:column;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .footer-links{gap:.8rem;justify-content:center;}
+  #inscriptionBar{flex-direction:column;gap:.7rem;padding:1rem 1.2rem;text-align:center;}
+  .btn-inscription{width:100%;max-width:260px;text-align:center;}
+  #colorEditorPanel{width:100%;right:-100%;}
+  #photoManagerPanel{width:100%;left:-100%;}
+  #floatingEditorBar{bottom:80px;right:10px;max-width:95vw;}
+}
+
+/* ══════════════════════════════════════════════
+   SMALL MOBILE ≤ 480px
+══════════════════════════════════════════════ */
+@media(max-width:480px){
+  .hero-title{font-size:1.7rem;}
+  .section-title{font-size:1.5rem;}
+  .cd-num{font-size:1.5rem;}
+  .cd-sep{display:none;}
+  .speakers-grid{grid-template-columns:1fr;}
+  .sponsors-grid{justify-content:center;}
+  .prog-row{grid-template-columns:52px 1fr;gap:.3rem;}
+  .prog-type{display:none;}
+  .footer-links{flex-direction:column;align-items:center;gap:.6rem;}
+}
+
 
 /* ── SPONSORS ── */
 #sponsors{background:var(--navy);}
@@ -261,7 +390,19 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
     <li><a href="#inscription">Inscription</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <button class="nav-admin" onclick="openAdminLogin()">⚙ Admin</button>
+</nav>
+<nav class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">À propos</a>
+  <a href="#speakers" onclick="closeMobileMenu()">Intervenants</a>
+  <a href="#programme" onclick="closeMobileMenu()">Programme</a>
+  <a href="#partners" onclick="closeMobileMenu()">Partenaires</a>
+  <a href="#sponsors" onclick="closeMobileMenu()">Sponsors</a>
+  <a href="#inscription" onclick="closeMobileMenu()">Inscription</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -270,6 +411,15 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
     <div class="hero-badge">Collégiale d'Oncologie-Radiothérapie · AP-HP</div>
     <h1 class="hero-title">Rencontres Annuelles<br>de la Collégiale<br>d'Oncologie-Radiothérapie de l'AP-HP<br><em>RACORA IV</em></h1>
     <p class="hero-sub">4èmes Rencontres Annuelles de la Collégiale d'Oncologie-Radiothérapie de l'AP-HP<br>Hôpitaux Henri Mondor · Pitié Salpêtrière · Saint-Louis · Tenon · HEGP</p>
+    <div id="countdown">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Jours</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Heures</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Secondes</span></div>
+    </div>
     <div class="hero-info">
       <div class="hi-item"><div class="hi-label">Date</div><div class="hi-value">Vendredi 11 décembre 2026</div></div>
       <div class="hi-item"><div class="hi-label">Lieu</div><div class="hi-value"><a href="https://maps.google.com/?q=Maison+de+la+Chimie+28+Rue+Saint-Dominique+75007+Paris" target="_blank" style="color:var(--light);text-decoration:none;border-bottom:1px dashed rgba(200,169,110,.4);">Maison de la Chimie, Paris</a></div></div>
@@ -282,6 +432,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="#programme" class="btn-primary">Voir le programme</a>
       <a href="#inscription" class="btn-secondary">S'inscrire</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHEQFywPxnH3Idfu828ddQeLEbEl-QdOIgWxncYLvU_Tf-YQ/viewform" target="_blank" class="btn-inscription">Inscription rapide →</a>
     </div>
   </div>
 </section>
@@ -820,8 +971,10 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
       </div>
       <div class="footer-links">
         <a href="#about">À propos</a>
+        <a href="#speakers">Intervenants</a>
         <a href="#programme">Programme</a>
         <a href="#partners">Partenaires</a>
+        <a href="#sponsors">Sponsors</a>
         <a href="#inscription">Inscription</a>
         <a href="#contact">Contact</a>
       </div>
@@ -873,10 +1026,109 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:3rem 2r
       <div class="admin-btns"><button class="btn-danger" onclick="if(confirm('Réinitialiser toutes les données ?')){localStorage.clear();location.reload();}">Réinitialiser tout</button></div>
     </div>
 
+    <div class="admin-section">
+      <h3>🎨 Couleurs du site</h3>
+      <p style="color:#7a8a9a;font-size:.78rem;margin-bottom:1rem;">Modifiez les couleurs en temps réel.</p>
+      <div class="admin-btns"><button class="btn-save" onclick="openColorEditor()">Ouvrir l'éditeur</button></div>
+    </div>
+    <div class="admin-section">
+      <h3>🖼️ Gestion des photos</h3>
+      <p style="color:#7a8a9a;font-size:.78rem;margin-bottom:1rem;">Importez et insérez des photos dans le site.</p>
+      <div class="admin-btns"><button class="btn-save" onclick="openPhotoManager()">Ouvrir le gestionnaire</button></div>
+    </div>
+    <div class="admin-section">
+      <h3>📅 Éditeur de programme</h3>
+      <p style="color:#7a8a9a;font-size:.78rem;margin-bottom:1rem;">Modifiez les sessions du programme.</p>
+      <div class="admin-btns"><button class="btn-save" onclick="openProgEditor()">Ouvrir l'éditeur</button></div>
+    </div>
     <div class="admin-btns" style="margin-top:1rem;">
       <button class="btn-outline" onclick="document.getElementById('adminPanel').classList.remove('open')">✕ Fermer</button>
     </div>
   </div>
+</div>
+
+<!-- ── COLOUR EDITOR ── -->
+<div id="colorEditorPanel">
+  <button class="cep-close-x" onclick="closeColorEditor()">✕</button>
+  <h3>Couleurs du site</h3>
+  <span class="cep-sub">Modification en temps réel</span>
+  <div class="cep-row"><span class="cep-label">Fond principal</span>
+    <label class="cep-swatch"><input type="color" id="c_navy" value="#0d1b2a" oninput="liveColor('--navy',this.value);updateHex('h_navy',this.value)"></label>
+    <input class="cep-hex" id="h_navy" value="#0d1b2a" oninput="liveColorHex('--navy','c_navy',this.value)">
+  </div>
+  <div class="cep-row"><span class="cep-label">Fond secondaire</span>
+    <label class="cep-swatch"><input type="color" id="c_deep" value="#1a2d42" oninput="liveColor('--deep',this.value);updateHex('h_deep',this.value)"></label>
+    <input class="cep-hex" id="h_deep" value="#1a2d42" oninput="liveColorHex('--deep','c_deep',this.value)">
+  </div>
+  <div class="cep-row"><span class="cep-label">Accent doré</span>
+    <label class="cep-swatch"><input type="color" id="c_accent" value="#c8a96e" oninput="liveColor('--accent',this.value);updateHex('h_accent',this.value)"></label>
+    <input class="cep-hex" id="h_accent" value="#c8a96e" oninput="liveColorHex('--accent','c_accent',this.value)">
+  </div>
+  <div class="cep-row"><span class="cep-label">Bleu AP-HP</span>
+    <label class="cep-swatch"><input type="color" id="c_aphp" value="#0055A4" oninput="liveColor('--aphp',this.value);updateHex('h_aphp',this.value)"></label>
+    <input class="cep-hex" id="h_aphp" value="#0055A4" oninput="liveColorHex('--aphp','c_aphp',this.value)">
+  </div>
+  <div class="cep-row"><span class="cep-label">Texte principal</span>
+    <label class="cep-swatch"><input type="color" id="c_light" value="#f4f0ea" oninput="liveColor('--light',this.value);updateHex('h_light',this.value)"></label>
+    <input class="cep-hex" id="h_light" value="#f4f0ea" oninput="liveColorHex('--light','c_light',this.value)">
+  </div>
+  <div class="cep-row"><span class="cep-label">Texte discret</span>
+    <label class="cep-swatch"><input type="color" id="c_muted" value="#7a8a9a" oninput="liveColor('--muted',this.value);updateHex('h_muted',this.value)"></label>
+    <input class="cep-hex" id="h_muted" value="#7a8a9a" oninput="liveColorHex('--muted','c_muted',this.value)">
+  </div>
+  <hr class="cep-divider">
+  <p style="font-size:.7rem;color:#7a8a9a;margin-bottom:.8rem;">Thèmes :</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem;">
+    <button class="cep-reset-btn" onclick="applyTheme('aphp')">🔵 AP-HP</button>
+    <button class="cep-reset-btn" onclick="applyTheme('bordeaux')">🍷 Bordeaux</button>
+    <button class="cep-reset-btn" onclick="applyTheme('forest')">🌿 Forest</button>
+    <button class="cep-reset-btn" onclick="applyTheme('original')">⭐ Original</button>
+  </div>
+  <button class="cep-apply" onclick="exportColorsAndSave()">💾 Sauvegarder & Exporter</button>
+  <button class="cep-reset-btn" onclick="resetColors()" style="margin-top:.5rem;">Réinitialiser</button>
+</div>
+
+<!-- ── PHOTO MANAGER ── -->
+<div id="photoManagerPanel">
+  <button class="pm-close-x" onclick="closePhotoManager()">✕</button>
+  <h3>Gestionnaire Photos</h3>
+  <span class="pm-sub">Importez et insérez des photos</span>
+  <div class="pm-drop" id="pmDropZone" onclick="document.getElementById('pmFileInput').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handlePmDrop(event)">
+    <span>📸</span>
+    <p>Cliquez ou glissez-déposez vos photos</p>
+    <p style="font-size:.7rem;margin-top:.3rem;">JPG, PNG, WebP acceptés</p>
+  </div>
+  <input type="file" id="pmFileInput" accept="image/*" multiple style="display:none" onchange="handlePmFiles(this.files)">
+  <div id="pmGallery"></div>
+  <hr class="cep-divider">
+  <p style="font-size:.72rem;color:#7a8a9a;margin-bottom:.5rem;">Insérer dans :</p>
+  <select class="pm-section-select" id="pmSectionTarget">
+    <option value="hero">Hero</option>
+    <option value="about">À propos</option>
+    <option value="speakers">Intervenants</option>
+    <option value="programme">Programme</option>
+    <option value="partners">Partenaires</option>
+    <option value="body">Bas de page</option>
+  </select>
+  <button class="pm-insert-main" id="pmInsertBtn" onclick="insertSelectedPhoto()" disabled>Insérer la photo sélectionnée</button>
+  <button class="cep-reset-btn" onclick="clearPmGallery()">Vider la bibliothèque</button>
+</div>
+
+<!-- ── FLOATING EDITOR BAR ── -->
+<div id="floatingEditorBar" style="display:none;">
+  <button class="editor-toggle" onclick="toggleFullEdit()">✏️ Éditer</button>
+  <button class="editor-image" onclick="openPhotoManager()">🖼️ Photos</button>
+  <button class="editor-image" onclick="openColorEditor()">🎨 Couleurs</button>
+  <button class="editor-image" onclick="openProgEditor()">📅 Programme</button>
+  <button class="editor-image" onclick="addNewSection()">＋ Section</button>
+  <button class="editor-save" onclick="downloadEditedSite()">💾 Exporter</button>
+</div>
+
+<!-- ── INSCRIPTION BAR ── -->
+<div id="inscriptionBar">
+  <p><strong>RACORA IV</strong> — Vendredi 11 décembre 2026 · Maison de la Chimie, Paris &nbsp;|&nbsp; Places limitées</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHEQFywPxnH3Idfu828ddQeLEbEl-QdOIgWxncYLvU_Tf-YQ/viewform" target="_blank" class="btn-inscription">S'inscrire →</a>
+  <button class="bar-close-btn" onclick="document.getElementById('inscriptionBar').style.display='none'">✕</button>
 </div>
 
 <script>
@@ -929,5 +1181,162 @@ function submitForm(){
   document.getElementById('formSuccess').style.display='block';
 }
 </script>
+
+<script>
+/* ── HAMBURGER ── */
+function toggleMobileMenu(){
+  document.getElementById('navHamburger').classList.toggle('open');
+  document.getElementById('navMobileMenu').classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navMobileMenu').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  const btn=document.getElementById('navHamburger');
+  const menu=document.getElementById('navMobileMenu');
+  if(menu&&btn&&!menu.contains(e.target)&&!btn.contains(e.target)){
+    btn.classList.remove('open');menu.classList.remove('open');
+  }
+});
+
+/* ── COUNTDOWN ── */
+(function(){
+  const target=new Date('2026-12-11T08:00:00').getTime();
+  function tick(){
+    const diff=target-Date.now();
+    if(diff<=0){['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent='00';});return;}
+    const fmt=n=>String(n).padStart(2,'0');
+    const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=fmt(v);};
+    set('cd-days',Math.floor(diff/86400000));
+    set('cd-hours',Math.floor((diff%86400000)/3600000));
+    set('cd-mins',Math.floor((diff%3600000)/60000));
+    set('cd-secs',Math.floor((diff%60000)/1000));
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* Show sticky bar after 3s */
+setTimeout(function(){
+  const bar=document.getElementById('inscriptionBar');
+  if(bar)bar.classList.add('visible');
+},3000);
+
+/* ── SUPER ADMIN — auto-activate on login ── */
+(function(){
+  const orig=window.doAdminLogin;
+  window.doAdminLogin=function(){
+    if(orig)orig();
+    setTimeout(enableFullAdminAccess,300);
+  };
+})();
+
+function enableFullAdminAccess(){
+  const bar=document.getElementById('floatingEditorBar');
+  if(bar)bar.style.display='flex';
+  activateGlobalEditing();
+}
+let EXIOME_EDIT_MODE=false;
+function activateGlobalEditing(){
+  EXIOME_EDIT_MODE=true;
+  document.body.classList.add('edit-mode');
+  document.querySelectorAll('*').forEach(el=>{
+    const skip=['SCRIPT','STYLE','META','HEAD','LINK','BODY','HTML'];
+    if(!skip.includes(el.tagName)&&!el.closest('#floatingEditorBar')&&!el.closest('#adminPanel')&&!el.closest('#adminLoginOverlay')&&!el.closest('#colorEditorPanel')&&!el.closest('#photoManagerPanel')){
+      el.contentEditable=true;
+      el.style.outline='1px dashed rgba(200,169,110,.35)';
+      el.addEventListener('dblclick',function(e){if(confirm('Supprimer cet élément ?'))e.target.remove();});
+    }
+  });
+  alert('SUPER ADMIN ACTIVÉ — Cliquez sur n'importe quel texte pour le modifier');
+}
+function disableGlobalEditing(){
+  EXIOME_EDIT_MODE=false;
+  document.body.classList.remove('edit-mode');
+  document.querySelectorAll('*').forEach(el=>{el.contentEditable=false;el.style.outline='';});
+}
+function toggleFullEdit(){EXIOME_EDIT_MODE?disableGlobalEditing():activateGlobalEditing();}
+
+function addNewSection(){
+  const title=prompt('Titre de la section');
+  if(!title)return;
+  const s=document.createElement('section');
+  s.innerHTML=`<div class="container"><p class="section-label">NOUVELLE SECTION</p><h2 class="section-title">${title}</h2><p contenteditable="true">Contenu ici...</p></div>`;
+  document.body.appendChild(s);
+}
+function downloadEditedSite(){
+  disableGlobalEditing();
+  const blob=new Blob([document.documentElement.outerHTML],{type:'text/html'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='RACORA_SUPER_ADMIN.html';a.click();
+}
+
+/* ── COLOUR EDITOR ── */
+const THEMES_R={
+  aphp:{'--navy':'#061A33','--deep':'#0a2448','--accent':'#c8a96e','--accent2':'#e8c97e','--aphp':'#0055A4','--aphp2':'#3A7DC9'},
+  bordeaux:{'--navy':'#1a0a0f','--deep':'#2d1018','--accent':'#c84b6e','--accent2':'#e87a96','--aphp':'#9B1D3A','--aphp2':'#C44060'},
+  forest:{'--navy':'#0a1a0e','--deep':'#122a18','--accent':'#6abf7a','--accent2':'#8ed49c','--aphp':'#2E7D32','--aphp2':'#4CAF50'},
+  original:{'--navy':'#0d1b2a','--deep':'#1a2d42','--accent':'#c8a96e','--accent2':'#e8c97e','--aphp':'#0055A4','--aphp2':'#3A7DC9'}
+};
+function openColorEditor(){document.getElementById('adminPanel').classList.remove('open');document.getElementById('colorEditorPanel').classList.add('open');}
+function closeColorEditor(){document.getElementById('colorEditorPanel').classList.remove('open');}
+function liveColor(v,val){document.documentElement.style.setProperty(v,val);}
+function liveColorHex(v,pid,val){if(/^#[0-9A-Fa-f]{6}$/.test(val)){document.documentElement.style.setProperty(v,val);document.getElementById(pid).value=val;}}
+function updateHex(hid,val){document.getElementById(hid).value=val;}
+function applyTheme(name){const t=THEMES_R[name];if(!t)return;Object.entries(t).forEach(([v,c])=>{document.documentElement.style.setProperty(v,c);const k=v.replace('--','').replace('-','');const p=document.getElementById('c_'+k);const h=document.getElementById('h_'+k);if(p)p.value=c;if(h)h.value=c;});}
+function resetColors(){applyTheme('aphp');}
+function exportColorsAndSave(){
+  const vars=['--navy','--deep','--accent','--accent2','--aphp','--aphp2','--light','--muted'].map(v=>`${v}:${getComputedStyle(document.documentElement).getPropertyValue(v).trim()};`).join('');
+  let s=document.getElementById('__colorOverride');
+  if(!s){s=document.createElement('style');s.id='__colorOverride';document.head.appendChild(s);}
+  s.textContent=`:root{${vars}}`;
+  closeColorEditor();downloadEditedSite();
+}
+
+/* ── PHOTO MANAGER ── */
+let pmPhotos=[],pmSelectedIdx=null;
+function openPhotoManager(){document.getElementById('adminPanel').classList.remove('open');document.getElementById('photoManagerPanel').classList.add('open');}
+function closePhotoManager(){document.getElementById('photoManagerPanel').classList.remove('open');}
+function handlePmFiles(files){Array.from(files).forEach(f=>{const r=new FileReader();r.onload=e=>{pmPhotos.push({src:e.target.result,name:f.name});renderPmGallery();};r.readAsDataURL(f);});}
+function handlePmDrop(e){e.preventDefault();document.getElementById('pmDropZone').classList.remove('drag-over');handlePmFiles(e.dataTransfer.files);}
+function renderPmGallery(){
+  const g=document.getElementById('pmGallery');g.innerHTML='';
+  pmPhotos.forEach((p,i)=>{
+    const d=document.createElement('div');d.className='pm-thumb';
+    if(pmSelectedIdx===i)d.style.outline='2px solid #c8a96e';
+    d.innerHTML=`<img src="${p.src}"><button class="pm-del" onclick="pmDelete(${i})">✕</button><button class="pm-insert-btn" onclick="pmSelect(${i})">Sélectionner</button>`;
+    g.appendChild(d);
+  });
+  document.getElementById('pmInsertBtn').disabled=pmSelectedIdx===null;
+}
+function pmSelect(i){pmSelectedIdx=i;renderPmGallery();document.getElementById('pmInsertBtn').disabled=false;}
+function pmDelete(i){pmPhotos.splice(i,1);if(pmSelectedIdx===i)pmSelectedIdx=null;else if(pmSelectedIdx>i)pmSelectedIdx--;renderPmGallery();}
+function clearPmGallery(){pmPhotos=[];pmSelectedIdx=null;renderPmGallery();}
+function insertSelectedPhoto(){
+  if(pmSelectedIdx===null||!pmPhotos[pmSelectedIdx])return;
+  const src=pmPhotos[pmSelectedIdx].src;
+  const target=document.getElementById('pmSectionTarget').value;
+  const wrap=document.createElement('div');
+  wrap.style.cssText='position:relative;margin:20px auto;max-width:900px;border-radius:14px;overflow:hidden;border:1px solid rgba(200,169,110,.3);';
+  const img=document.createElement('img');img.src=src;img.style.cssText='width:100%;display:block;';
+  const del=document.createElement('button');del.innerHTML='✕';
+  del.style.cssText='position:absolute;top:10px;right:10px;background:rgba(192,57,43,.85);color:white;border:none;padding:.4rem .8rem;border-radius:6px;cursor:pointer;font-size:.75rem;';
+  del.onclick=()=>wrap.remove();wrap.appendChild(img);wrap.appendChild(del);
+  const map={hero:'#hero',about:'#about',speakers:'#speakers',programme:'#programme',partners:'#partners',body:'body'};
+  const sel=map[target]||'body';
+  const c=sel==='body'?document.body:document.querySelector(sel);
+  if(c){c.appendChild(wrap);alert('Photo insérée !');}else{document.body.appendChild(wrap);}
+}
+
+/* ── PROGRAMME EDITOR ── */
+function openProgEditor(){
+  document.getElementById('adminPanel').classList.remove('open');
+  alert('Cliquez sur n'importe quelle ligne du programme pour la modifier directement.
+
+Le mode édition doit être activé (bouton ✏️ Éditer dans la barre flottante).');
+  enableFullAdminAccess();
+}
+</script>
+
 </body>
 </html>
