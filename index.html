@@ -242,6 +242,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 
 /* ADMIN PANELS — kept dark for usability */
 #adminLoginOverlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100000;display:none;align-items:center;justify-content:center;}
+#adminLoginOverlay.open{display:flex;}
 #adminPanel,#colorEditorPanel,#photoManagerPanel{font-family:'Montserrat',sans-serif;}
 #colorEditorPanel{position:fixed;top:0;right:-420px;width:400px;height:100vh;z-index:99999;background:#0f1e2d;border-left:1px solid rgba(200,169,110,.4);padding:1.5rem 1.2rem;overflow-y:auto;transition:right .3s ease;box-shadow:-20px 0 60px rgba(0,0,0,.5);}
 #colorEditorPanel.open{right:0;}
@@ -333,6 +334,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <button class="alb-cancel" onclick="closeAdminLogin()">Annuler</button>
   </div>
 </div>
+<div id="adminPanel" style="display:none;"></div>
 
 <!-- ── NAV ── -->
 <nav>
