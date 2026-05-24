@@ -1116,15 +1116,15 @@ function submitForm(){
 /* ── HAMBURGER ── */
 function toggleMobileMenu(){
   document.getElementById('navHamburger').classList.toggle('open');
-  document.getElementById('navMobileMenu').classList.toggle('open');
+  document.getElementById('mobileNav').classList.toggle('open');
 }
 function closeMobileMenu(){
   document.getElementById('navHamburger').classList.remove('open');
-  document.getElementById('navMobileMenu').classList.remove('open');
+  document.getElementById('mobileNav').classList.remove('open');
 }
 document.addEventListener('click',function(e){
-  const btn=document.getElementById('navHamburger');
-  const menu=document.getElementById('navMobileMenu');
+  var btn=document.getElementById('navHamburger');
+  var menu=document.getElementById('mobileNav');
   if(menu&&btn&&!menu.contains(e.target)&&!btn.contains(e.target)){
     btn.classList.remove('open');menu.classList.remove('open');
   }
@@ -1253,18 +1253,7 @@ function insertSelectedPhoto(){
 /* ── PROGRAMME EDITOR ── */
 function openProgEditor(){
   document.getElementById('adminPanel').classList.remove('open');
-  alert('Cliquez sur n'importe quelle ligne du programme pour la modifier directement.
-
-Le mode édition doit être activé (bouton ✏️ Éditer dans la barre flottante).');
   enableFullAdminAccess();
-}
-
-
-function toggleMobileMenu(){
-  document.getElementById('mobileNav').classList.toggle('open');
-}
-function closeMobileMenu(){
-  document.getElementById('mobileNav').classList.remove('open');
 }
 </script>
 </body>
