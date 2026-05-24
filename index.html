@@ -50,6 +50,8 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 2rem;display
 .nav-links a:hover{color:var(--blue);}
 .nav-cta{background:var(--blue);color:#fff!important;padding:.5rem 1.2rem;border-radius:6px;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
 .nav-cta:hover{background:var(--blue-dark)!important;}
+.nav-admin-link{color:var(--text3)!important;font-size:.68rem!important;opacity:.7;transition:opacity .2s,color .2s!important;}
+.nav-admin-link:hover{color:var(--blue)!important;opacity:1;}
 
 /* HAMBURGER */
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;}
@@ -350,6 +352,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <li><a href="#partners">Partenaires</a></li>
     <li><a href="#inscription">Inscription</a></li>
     <li><a href="#inscription" class="nav-cta">S'inscrire →</a></li>
+    <li><a href="#" class="nav-admin-link" onclick="event.preventDefault();openAdminLogin()" title="Administration">🔐 Admin</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -362,6 +365,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
   <a href="#partners" onclick="closeMobileMenu()">Partenaires</a>
   <a href="#inscription" onclick="closeMobileMenu()">Inscription</a>
   <a href="#inscription" onclick="closeMobileMenu()" style="color:var(--blue);font-weight:700;">S'inscrire →</a>
+  <a href="#" onclick="event.preventDefault();closeMobileMenu();openAdminLogin()" style="color:var(--text3);font-size:.78rem;opacity:.75;">🔐 Admin</a>
 </div>
 
 <!-- ── HERO ── -->
