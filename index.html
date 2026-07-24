@@ -113,6 +113,8 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 2rem;display
 .stat{text-align:center;padding:.8rem;}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--blue);line-height:1;margin-bottom:.25rem;}
 .stat-label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.2rem;}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1rem .5rem;text-align:center;box-shadow:var(--shadow);}
 
 /* SECTIONS */
 section{padding:4rem 2rem;}
@@ -211,8 +213,9 @@ section{padding:4rem 2rem;}
 .t-conf{background:#FCEFC7;color:#8A6100;}
 .t-discussion{background:#DCEFDD;color:#2E7D32;}
 .t-cloture{background:#F1D9E1;color:var(--maroon);}
-.prog-content{font-size:.82rem;color:var(--text);text-align:justify;}
+.prog-content{font-size:.82rem;color:var(--text);font-weight:600;line-height:1.5;}
 .prog-speaker{display:block;font-size:.71rem;color:var(--text3);margin-top:.2rem;}
+.prog-moderation{display:block;font-size:.71rem;font-style:italic;color:var(--text3);margin-top:.4rem;}
 .prog-plenary-row-light,.prog-plenary-row{background:linear-gradient(90deg,rgba(0,85,164,.03),transparent);}
 .prog-break-row-light,.prog-break-row{background:rgba(0,0,0,.015);}
 
@@ -263,6 +266,17 @@ section{padding:4rem 2rem;}
 #inscriptionBar .btn-inscription{padding:.65rem 1.6rem;font-size:.74rem;}
 .bar-close-btn{background:none;border:none;color:var(--text3);cursor:pointer;font-size:1rem;padding:.2rem .5rem;flex-shrink:0;}
 
+/* CONTACT */
+#contact{background:var(--bg);}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.6rem;display:flex;align-items:center;gap:1rem;box-shadow:var(--shadow);}
+.contact-icon{font-size:1.8rem;flex-shrink:0;}
+.contact-title{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);font-weight:600;margin-bottom:.3rem;}
+.contact-text{font-size:.92rem;color:var(--text);font-weight:500;}
+.contact-text a{color:var(--blue);text-decoration:none;}
+.btn-maps{padding:.7rem 1.4rem;background:var(--blue);color:#fff!important;border-radius:8px;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-decoration:none;white-space:nowrap;transition:background .2s;}
+.btn-maps:hover{background:var(--blue-dark);}
+
 /* FOOTER */
 footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px);}
 .footer-inner{max-width:1100px;margin:0 auto;}
@@ -281,6 +295,14 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 /* ADMIN PANELS — kept dark for usability */
 #adminLoginOverlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100000;display:none;align-items:center;justify-content:center;}
 #adminLoginOverlay.open{display:flex;}
+.alb{background:#fff;border-radius:16px;padding:2rem 2.2rem;width:340px;max-width:90vw;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center;}
+.alb h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--blue);margin-bottom:.3rem;font-weight:400;}
+.alb-sub{display:block;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:1.3rem;}
+.alb input{width:100%;padding:.75rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.9rem;margin-bottom:.4rem;box-sizing:border-box;}
+.alb-err{display:block;color:#C62828;font-size:.75rem;min-height:1.1rem;margin-bottom:.6rem;}
+.alb-go{width:100%;padding:.8rem;background:var(--blue);color:#fff;border:none;border-radius:8px;font-weight:700;font-size:.8rem;letter-spacing:.05em;cursor:pointer;margin-bottom:.5rem;}
+.alb-go:hover{background:var(--blue-dark);}
+.alb-cancel{width:100%;padding:.6rem;background:none;border:none;color:var(--text3);font-size:.78rem;cursor:pointer;}
 #adminPanel,#colorEditorPanel,#photoManagerPanel{font-family:'Montserrat',sans-serif;}
 #colorEditorPanel{position:fixed;top:0;right:-420px;width:400px;height:100vh;z-index:99999;background:#0f1e2d;border-left:1px solid rgba(200,169,110,.4);padding:1.5rem 1.2rem;overflow-y:auto;transition:right .3s ease;box-shadow:-20px 0 60px rgba(0,0,0,.5);}
 #colorEditorPanel.open{right:0;}
@@ -295,7 +317,9 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 .cep-theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:.8rem;}
 .cep-theme-btn{padding:.6rem;background:#162636;border:1px solid #2a4060;border-radius:6px;color:#a0b0c0;font-size:.72rem;cursor:pointer;text-align:center;transition:.2s;}
 .cep-theme-btn:hover{border-color:#c8a96e;color:#c8a96e;}
-.cep-action-btn{width:100%;padding:.7rem;background:linear-gradient(135deg,#0055A4,#29B6F6);border:none;border-radius:6px;color:#fff;font-size:.75rem;font-weight:600;cursor:pointer;margin-top:.4rem;}
+.cep-action-btn,.cep-apply{width:100%;padding:.7rem;background:linear-gradient(135deg,#0055A4,#29B6F6);border:none;border-radius:6px;color:#fff;font-size:.75rem;font-weight:600;cursor:pointer;margin-top:.4rem;}
+.cep-reset-btn{padding:.6rem;background:#162636;border:1px solid #2a4060;border-radius:6px;color:#a0b0c0;font-size:.72rem;cursor:pointer;text-align:center;transition:.2s;width:100%;}
+.cep-reset-btn:hover{border-color:#c8a96e;color:#c8a96e;}
 #photoManagerPanel{position:fixed;top:0;left:-450px;width:430px;height:100vh;z-index:99999;background:#0f1e2d;border-right:1px solid rgba(200,169,110,.4);padding:1.5rem 1.2rem;overflow-y:auto;transition:left .3s ease;box-shadow:20px 0 60px rgba(0,0,0,.5);}
 #photoManagerPanel.open{left:0;}
 #photoManagerPanel h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#c8a96e;margin-bottom:.3rem;}
@@ -528,7 +552,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 <section id="programme">
   <div class="container">
     <p class="section-label">Programme</p>
-    <h2 class="section-title">Programme Scientifique — 11 Décembre 2026</h2>
+    <h2 class="section-title">Programme Scientifique</h2>
 
     <div class="prog-header-info">
       <div class="phi-item"><div class="phi-label">Date</div><div class="phi-value">Vendredi 11 décembre 2026</div></div>
@@ -558,8 +582,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-bienvenue">Bienvenue</span>
           <div class="prog-content">
             Mot de bienvenue et introduction
-            <span class="prog-speaker">Y. Belkacemi (HMN)<br>C. Chargari (PSL)<br>C. Durdux (HEGP)<br>F. Huguet (TNN)<br>L. Quero (SLS)</span>
-            <span class="prog-moderation">Modération : G. Coraggio (HMN)<br>N-H To (HMN)<br>C. Evin (TNN)</span>
+            <span class="prog-speaker">Y. Belkacemi (HMN)<br>C. Chargari (PSL)<br>C. Durdux (HEGP)<br>F. Huguet (TNN)<br>L. Quero (SLS)</span>
+            <span class="prog-moderation">Modération :<br>G. Coraggio (HMN)<br>N-H To (HMN)<br>C. Evin (TNN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -567,7 +591,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les essais cliniques qui ont changé la pratique en 2026
-            <span class="prog-speaker">G. Camprodon (PSL)<br>C. Lasar (HMN)</span>
+            <span class="prog-speaker">G. Camprodon (PSL)<br>C. Lasar (HMN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -575,7 +599,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les études cliniques et projets du GRAPP
-            <span class="prog-speaker">G. Coraggio (HMN)<br>M-A. Belaid (GRAPP)</span>
+            <span class="prog-speaker">G. Coraggio (HMN)<br>M-A. Belaid (GRAPP)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -583,7 +607,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Le modèle organisationnel et perspectives de la recherche à UNICANCER
-            <span class="prog-speaker">J. Lemonier (UNICANCER)</span>
+            <span class="prog-speaker">J. Lemonier (UNICANCER)</span>
           </div>
         </div>
       </div>
@@ -609,14 +633,14 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row" style="background:rgba(123,31,162,.03);">
           <span class="prog-time"></span>
           <span class="prog-type t-table">Table ronde</span>
-          <div class="prog-content" style="font-style:italic;color:var(--text3);">Table ronde — modération J-E. Bibault (HEGP) · S. Toublanc (HEGP)</div>
+          <div class="prog-content" style="font-style:italic;font-weight:400;color:var(--text3);">Table ronde — modération J-E. Bibault (HEGP) · S. Toublanc (HEGP)</div>
         </div>
         <div class="prog-row">
           <span class="prog-time">11:00–11:15</span>
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             Le point de vue du Médecin
-            <span class="prog-speaker">S. Frikha (HMN)</span>
+            <span class="prog-speaker">S. Frikha (HMN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -624,7 +648,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             Le point de vue du Physicien
-            <span class="prog-speaker">C. Robert (Institut Gustave Roussy)</span>
+            <span class="prog-speaker">C. Robert (Institut Gustave Roussy)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -632,20 +656,20 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             Le point de vue Éthique et Juridique
-            <span class="prog-speaker">D. Gruson (Ethik-IA, Paris)</span>
+            <span class="prog-speaker">D. Gruson (Ethik-IA, Paris)</span>
           </div>
         </div>
         <div class="prog-row" style="background:rgba(123,31,162,.03);">
           <span class="prog-time">11:45</span>
           <span class="prog-type t-table">Constructeurs</span>
-          <div class="prog-content" style="font-style:italic;color:var(--text3);">Le point de vue des Constructeurs et exemples technologiques pratiques — G. Chabin (Varian) · L. Collignon (Elekta)</div>
+          <div class="prog-content" style="font-style:italic;font-weight:400;color:var(--text3);">Le point de vue des Constructeurs et exemples technologiques pratiques — G. Chabin (Varian) · L. Collignon (Elekta)</div>
         </div>
         <div class="prog-row">
           <span class="prog-time">11:45–12:00</span>
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             Radiothérapie de précision et IA : « voir l'invisible, atteindre l'impossible »
-            <span class="prog-speaker">N. Paragios (Therapanacea, Paris)</span>
+            <span class="prog-speaker">N. Paragios (Therapanacea, Paris)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -653,7 +677,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             L'IA au service de la radiothérapie : applications actuelles, perspectives d'avenir
-            <span class="prog-speaker">G. Chabin (Varian)</span>
+            <span class="prog-speaker">G. Chabin (Varian)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -661,7 +685,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Intervention</span>
           <div class="prog-content">
             L'IA au cœur de la vision Elekta : de l'intégration à l'impact
-            <span class="prog-speaker">L. Collignon (Elekta)</span>
+            <span class="prog-speaker">L. Collignon (Elekta)</span>
           </div>
         </div>
       </div>
@@ -689,7 +713,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-conf">Plénière I</span>
           <div class="prog-content">
             Situation des MERMs en Radiothérapie à l'AP-HP : états des lieux et perspectives institutionnelles vues de l'école à l'intégration dans les services
-            <span class="prog-speaker">N. Revel (Directeur Général AP-HP)<br>M-F Doval (IFMM-AP-HP, Picpus)</span>
+            <span class="prog-speaker">N. Revel (Directeur Général AP-HP)<br>M-F Doval (IFMM-AP-HP, Picpus)</span>
           </div>
         </div>
       </div>
@@ -700,7 +724,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
       <div class="session-header sh-green">
         <div class="session-header-inner">
           <span class="session-title-text">🤝 SESSION III — Session gestion humaine et qualité relationnelle au travail</span>
-          <span class="session-partner">Modération : Y. Belkacemi (HMN) · J. Pieuchard (DRH) (à confirmer)</span>
+          <span class="session-partner">Modération : Y. Belkacemi (HMN) · J. Pieuchard (DRH) (à confirmer)</span>
         </div>
       </div>
       <div class="session-items">
@@ -709,7 +733,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Mise en œuvre d'un management par la qualité : réflexions du GT des cadres des services d'Oncologie-Radiothérapie de l'AP-HP
-            <span class="prog-speaker">A. Sobreira (HEGP)<br>S. Poli-Flament (TNN), pour le GT des Cadres</span>
+            <span class="prog-speaker">A. Sobreira (HEGP)<br>S. Poli-Flament (TNN), pour le GT des Cadres</span>
           </div>
         </div>
         <div class="prog-row">
@@ -717,7 +741,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Comment anticiper/gérer les conflits et assurer une communication adaptée ?
-            <span class="prog-speaker">À confirmer (TBC)</span>
+            <span class="prog-speaker">À confirmer (TBC)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -725,7 +749,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Comment améliorer l'accueil dans l'entreprise et s'adapter au client : quel parallèle avec la santé et le patient ?
-            <span class="prog-speaker">À confirmer (TBC)</span>
+            <span class="prog-speaker">À confirmer (TBC)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -733,7 +757,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Comment gérer le changement dans l'entreprise/service ?
-            <span class="prog-speaker">À confirmer (TBC)</span>
+            <span class="prog-speaker">À confirmer (TBC)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -741,7 +765,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Quelle gestion de la pénurie des RH et quels leviers pour attirer et fidéliser les talents ? Quelques exemples à l'AP-HP
-            <span class="prog-speaker">À confirmer (TBC)</span>
+            <span class="prog-speaker">À confirmer (TBC)</span>
           </div>
         </div>
       </div>
@@ -769,7 +793,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-conf">Plénière II</span>
           <div class="prog-content">
             Pratiques en Stéréotaxie et Associations aux Nouvelles Molécules : Risques et Bénéfice en 2026
-            <span class="prog-speaker">K. Debbi (HMN)</span>
+            <span class="prog-speaker">K. Debbi (HMN)</span>
           </div>
         </div>
       </div>
@@ -780,7 +804,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
       <div class="session-header sh-warm">
         <div class="session-header-inner">
           <span class="session-title-text">⚡ SESSION IV — Session Radiothérapie de haute technicité : Stéréotaxie et ré-irradiation</span>
-          <span class="session-partner">Modération : F. Huguet (TNN) · R. Itti (SLS)</span>
+          <span class="session-partner">Modération : F. Huguet (TNN) · R. Itti (SLS)</span>
         </div>
       </div>
       <div class="session-items">
@@ -789,7 +813,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Pourquoi et comment la stéréotaxie devient incontournable en cancérologie : rationnel et pratiques ?
-            <span class="prog-speaker">J. Jacob (PSL)</span>
+            <span class="prog-speaker">J. Jacob (PSL)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -797,7 +821,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Challenges pratiques en Physique pour une planification optimale des traitements en conditions stéréotaxiques
-            <span class="prog-speaker">W. Ksouri (HMN)</span>
+            <span class="prog-speaker">W. Ksouri (HMN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -805,7 +829,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les challenges de la ré-irradiation : des pré-requis à la routine pratique — <em>L'avis du médecin</em>
-            <span class="prog-speaker">L. Quero (SLS)</span>
+            <span class="prog-speaker">L. Quero (SLS)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -813,7 +837,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les challenges de la ré-irradiation : des pré-requis à la routine pratique — <em>L'avis du physicien</em>
-            <span class="prog-speaker">S. Toublanc (HEGP)</span>
+            <span class="prog-speaker">S. Toublanc (HEGP)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -821,7 +845,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Photons ou Protons pour les ré-irradiations : quels critères pour définir les indications et pratiques en 2026 ?
-            <span class="prog-speaker">H. Mammar (Institut Curie, Saint-Cloud)</span>
+            <span class="prog-speaker">H. Mammar (Institut Curie, Saint-Cloud)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -990,8 +1014,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <p class="section-label">Contact</p>
     <h2 class="section-title">Nous contacter</h2>
     <div class="contact-grid">
-      <div class="contact-card"><div class="contact-icon">📞</div><div class="contact-title">Téléphone</div><div class="contact-text">01.49.81.45.22</div></div>
-      <div class="contact-card"><div class="contact-icon">📧</div><div class="contact-title">Email</div><div class="contact-text"><a href="mailto:fadila.chekiri@aphp.fr">fadila.chekiri@aphp.fr</a></div></div>
+      <div class="contact-card"><div class="contact-icon">📞</div><div><div class="contact-title">Téléphone</div><div class="contact-text">01.49.81.45.22</div></div></div>
+      <div class="contact-card"><div class="contact-icon">📧</div><div><div class="contact-title">Email</div><div class="contact-text"><a href="mailto:fadila.chekiri@aphp.fr">fadila.chekiri@aphp.fr</a></div></div></div>
       <div class="contact-card" style="grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
         <div style="display:flex;align-items:center;gap:1.5rem;">
           <div style="font-size:2.5rem;">📍</div>
