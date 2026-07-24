@@ -134,6 +134,12 @@ section{padding:4rem 2rem;}
 .about-text p{margin-bottom:1rem;text-align:justify;}
 .about-text strong{color:var(--text);}
 .about-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+.pillars{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.6rem 1.8rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:1.2rem;}
+.pillars-label{font-size:.67rem;letter-spacing:.25em;text-transform:uppercase;color:var(--maroon);font-weight:700;margin-bottom:.2rem;}
+.pillar{display:flex;gap:1rem;align-items:flex-start;}
+.pillar-num{width:42px;height:42px;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--sky));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;}
+.pillar-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.25rem;}
+.pillar-text{font-size:.78rem;color:var(--text3);line-height:1.55;}
 .about-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem;}
 .about-feature,.abo-feature{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;box-shadow:var(--shadow);}
 .feature-icon,.abo-icon-wrap{font-size:1.6rem;margin-bottom:.6rem;}
@@ -156,14 +162,15 @@ section{padding:4rem 2rem;}
 #programme{background:var(--bg);}
 .prog-header{margin-bottom:1.5rem;}
 .prog-header-info{display:flex;flex-wrap:wrap;gap:1.6rem 2.2rem;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.8rem;margin-bottom:2rem;box-shadow:var(--shadow);}
-.phi-item{flex:1 1 200px;min-width:200px;border-left:3px solid var(--maroon);padding-left:1rem;}
+.phi-item{flex:1 1 auto;border-left:3px solid var(--maroon);padding-left:1rem;}
 .phi-label{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);font-weight:600;margin-bottom:.3rem;}
-.phi-value{font-size:.85rem;color:var(--text);font-weight:500;line-height:1.45;}
+.phi-value{font-size:.85rem;color:var(--text);font-weight:500;line-height:1.45;white-space:nowrap;}
+.phi-value.phi-wrap{white-space:normal;}
 .session-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.2rem;box-shadow:var(--shadow);background:#fff;}
 .session-header{padding:.9rem 1.4rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
 .session-header-inner{flex:1;}
-.session-header-inner span:first-child{font-size:.84rem;font-weight:700;color:var(--text);display:block;}
-.session-time-badge,.sh-time{font-size:.7rem;color:var(--text3);margin-left:auto;white-space:nowrap;}
+.session-title-text{font-size:.84rem;font-weight:700;color:var(--text);display:block;}
+.session-time-badge{font-size:.82rem;color:var(--blue);font-weight:700;white-space:nowrap;}
 .session-subtitle,.session-partner{display:block;font-size:.72rem;color:var(--text2);margin-top:.2rem;}
 .sh-blue{background:linear-gradient(90deg,#D6E9FA,#EAF4FD);}
 .sh-teal{background:linear-gradient(90deg,#CFEDE6,#E3F5F0);}
@@ -204,7 +211,7 @@ section{padding:4rem 2rem;}
 .t-conf{background:#FCEFC7;color:#8A6100;}
 .t-discussion{background:#DCEFDD;color:#2E7D32;}
 .t-cloture{background:#F1D9E1;color:var(--maroon);}
-.prog-content{font-size:.82rem;color:var(--text);}
+.prog-content{font-size:.82rem;color:var(--text);text-align:justify;}
 .prog-speaker{display:block;font-size:.71rem;color:var(--text3);margin-top:.2rem;}
 .prog-plenary-row-light,.prog-plenary-row{background:linear-gradient(90deg,rgba(0,85,164,.03),transparent);}
 .prog-break-row-light,.prog-break-row{background:rgba(0,0,0,.015);}
@@ -495,9 +502,10 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         </div>
       </div>
       <div class="pillars">
-        <div class="pillar"><div class="pillar-num">I</div><div><div class="pillar-title">Intelligence Artificielle</div><div class="pillar-text">Impact de l'IA sur l'innovation et les pratiques en Oncologie-Radiothérapie</div></div></div>
-        <div class="pillar"><div class="pillar-num">II</div><div><div class="pillar-title">Qualité relationnelle</div><div class="pillar-text">Gestion humaine, communication et qualité relationnelle en service d'Oncologie</div></div></div>
-        <div class="pillar"><div class="pillar-num">III</div><div><div class="pillar-title">Radiothérapie stéréotaxique</div><div class="pillar-text">Associations thérapeutiques, nouvelles molécules et haute technicité</div></div></div>
+        <p class="pillars-label">Trois grandes thématiques de cette édition</p>
+        <div class="pillar"><div class="pillar-num">🤖</div><div><div class="pillar-title">Intelligence Artificielle</div><div class="pillar-text">Impact de l'IA sur l'innovation et les pratiques en Oncologie-Radiothérapie</div></div></div>
+        <div class="pillar"><div class="pillar-num">🤝</div><div><div class="pillar-title">Qualité relationnelle</div><div class="pillar-text">Gestion humaine, communication et qualité relationnelle en service d'Oncologie</div></div></div>
+        <div class="pillar"><div class="pillar-num">⚡</div><div><div class="pillar-title">Radiothérapie stéréotaxique</div><div class="pillar-text">Associations thérapeutiques, nouvelles molécules et haute technicité</div></div></div>
       </div>
     </div>
   </div>
@@ -525,16 +533,14 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <div class="prog-header-info">
       <div class="phi-item"><div class="phi-label">Date</div><div class="phi-value">Vendredi 11 décembre 2026</div></div>
       <div class="phi-item"><div class="phi-label">Lieu</div><div class="phi-value">Maison de la Chimie, Paris</div></div>
-      <div class="phi-item"><div class="phi-label">Organisation</div><div class="phi-value">Collégiale d'Oncologie-Radiothérapie de l'AP-HP — 5 services d'Oncologie-Radiothérapie</div></div>
+      <div class="phi-item"><div class="phi-label">Organisation</div><div class="phi-value phi-wrap">Collégiale d'Oncologie-Radiothérapie de l'AP-HP — 5 services d'Oncologie-Radiothérapie</div></div>
     </div>
 
     <!-- ACCUEIL -->
     <div class="session-block">
       <div class="session-header sh-orange">
-        <div class="session-header-inner">
-          <span class="session-title-text">🚪 Accueil des participants — Visite des stands</span>
-          <span class="session-subtitle">08:30 → 09:00</span>
-        </div>
+        <span class="session-time-badge">08:30 → 09:00</span>
+        <span class="session-title-text">🚪 Accueil des participants — Visite des stands</span>
       </div>
     </div>
 
@@ -552,8 +558,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-bienvenue">Bienvenue</span>
           <div class="prog-content">
             Mot de bienvenue et introduction
-            <span class="prog-speaker">Y. Belkacemi (HMN) · C. Chargari (PSL) · C. Durdux (HEGP) · F. Huguet (TNN) · L. Quero (SLS)</span>
-            <span class="prog-moderation">Modération : G. Coraggio (HMN) · N-H To (HMN) · C. Evin (TNN)</span>
+            <span class="prog-speaker">Y. Belkacemi (HMN)<br>C. Chargari (PSL)<br>C. Durdux (HEGP)<br>F. Huguet (TNN)<br>L. Quero (SLS)</span>
+            <span class="prog-moderation">Modération : G. Coraggio (HMN)<br>N-H To (HMN)<br>C. Evin (TNN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -561,7 +567,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les essais cliniques qui ont changé la pratique en 2026
-            <span class="prog-speaker">G. Camprodon (PSL) · C. Lasar (HMN)</span>
+            <span class="prog-speaker">G. Camprodon (PSL)<br>C. Lasar (HMN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -569,7 +575,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les études cliniques et projets du GRAPP
-            <span class="prog-speaker">G. Coraggio (HMN) · M-A. Belaid (GRAPP)</span>
+            <span class="prog-speaker">G. Coraggio (HMN)<br>M-A. Belaid (GRAPP)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -586,10 +592,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <!-- PAUSE -->
     <div class="session-block">
       <div class="session-header sh-pause">
-        <div class="session-header-inner">
-          <span class="session-title-text">☕ Pause — Visite des Stands</span>
-          <span class="session-subtitle">10:30 → 11:00</span>
-        </div>
+        <span class="session-time-badge">10:30 → 11:00</span>
+        <span class="session-title-text">☕ Pause — Visite des Stands</span>
       </div>
     </div>
 
@@ -666,10 +670,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <!-- DÉJEUNER -->
     <div class="session-block">
       <div class="session-header sh-lunch">
-        <div class="session-header-inner">
-          <span class="session-title-text">🍽️ Pause Déjeuner — Visite des Stands</span>
-          <span class="session-subtitle">12:30 → 13:30</span>
-        </div>
+        <span class="session-time-badge">12:30 → 13:30</span>
+        <span class="session-title-text">🍽️ Pause Déjeuner — Visite des Stands</span>
       </div>
     </div>
 
@@ -687,7 +689,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-conf">Plénière I</span>
           <div class="prog-content">
             Situation des MERMs en Radiothérapie à l'AP-HP : états des lieux et perspectives institutionnelles vues de l'école à l'intégration dans les services
-            <span class="prog-speaker">N. Revel (Directeur Général AP-HP) · M-F Doval (IFMM-AP-HP, Picpus)</span>
+            <span class="prog-speaker">N. Revel (Directeur Général AP-HP)<br>M-F Doval (IFMM-AP-HP, Picpus)</span>
           </div>
         </div>
       </div>
@@ -707,7 +709,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Mise en œuvre d'un management par la qualité : réflexions du GT des cadres des services d'Oncologie-Radiothérapie de l'AP-HP
-            <span class="prog-speaker">A. Sobreira (HEGP) · S. Poli-Flament (TNN), pour le GT des Cadres</span>
+            <span class="prog-speaker">A. Sobreira (HEGP)<br>S. Poli-Flament (TNN), pour le GT des Cadres</span>
           </div>
         </div>
         <div class="prog-row">
@@ -748,10 +750,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <!-- PAUSE -->
     <div class="session-block">
       <div class="session-header sh-pause">
-        <div class="session-header-inner">
-          <span class="session-title-text">☕ Pause — Visite des Stands</span>
-          <span class="session-subtitle">15:40 → 16:10</span>
-        </div>
+        <span class="session-time-badge">15:40 → 16:10</span>
+        <span class="session-title-text">☕ Pause — Visite des Stands</span>
       </div>
     </div>
 
@@ -835,10 +835,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <!-- CLÔTURE -->
     <div class="session-block">
       <div class="session-header sh-orange">
-        <div class="session-header-inner">
-          <span class="session-title-text">🏁 Conclusions et Mot de Clôture</span>
-          <span class="session-subtitle">18:30</span>
-        </div>
+        <span class="session-time-badge">18:30</span>
+        <span class="session-title-text">🏁 Conclusions et Mot de Clôture</span>
       </div>
     </div>
 
