@@ -131,7 +131,7 @@ section{padding:4rem 2rem;}
 .abo-text,.about-card-text{font-size:.82rem;color:var(--text3);line-height:1.7;}
 /* ABOUT TEXT LAYOUT (original structure) */
 .about-text{font-size:.87rem;color:var(--text2);line-height:1.8;}
-.about-text p{margin-bottom:1rem;}
+.about-text p{margin-bottom:1rem;text-align:justify;}
 .about-text strong{color:var(--text);}
 .about-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
 .about-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem;}
@@ -155,6 +155,10 @@ section{padding:4rem 2rem;}
 /* PROGRAMME */
 #programme{background:var(--bg);}
 .prog-header{margin-bottom:1.5rem;}
+.prog-header-info{display:flex;flex-wrap:wrap;gap:1.6rem 2.2rem;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.8rem;margin-bottom:2rem;box-shadow:var(--shadow);}
+.phi-item{flex:1 1 200px;min-width:200px;border-left:3px solid var(--maroon);padding-left:1rem;}
+.phi-label{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);font-weight:600;margin-bottom:.3rem;}
+.phi-value{font-size:.85rem;color:var(--text);font-weight:500;line-height:1.45;}
 .session-block{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.2rem;box-shadow:var(--shadow);background:#fff;}
 .session-header{padding:.9rem 1.4rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
 .session-header-inner{flex:1;}
@@ -183,7 +187,7 @@ section{padding:4rem 2rem;}
 .sbg-gold .session-dot,.sh-orange .session-dot,.sh-warm .session-dot{background:#E65100;}
 .prog-row{display:grid;grid-template-columns:95px 85px 1fr;gap:.8rem;padding:.8rem 1.4rem;border-top:1px solid var(--border);align-items:start;}
 .prog-row:first-of-type{border-top:1px solid var(--border);}
-.prog-time{font-size:.73rem;color:var(--blue);font-weight:600;}
+.prog-time{font-size:.73rem;color:var(--blue);font-weight:600;white-space:nowrap;}
 .prog-type{display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;}
 .prog-badge,.badge-keynote,.t-keynote{background:#EBF3FC;color:#0055A4;}
 .badge-lecture,.t-lecture{background:#E0F4F1;color:#00695C;}
@@ -335,7 +339,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
   .cd-num{font-size:1.7rem;}
   .cd-sep{font-size:1.4rem;}
   .about-grid{grid-template-columns:1fr;}
-  .prog-row{grid-template-columns:80px 1fr;gap:.5rem;}
+  .prog-row{grid-template-columns:78px 1fr;gap:.5rem;}
+  .prog-time{font-size:.64rem;}
   .prog-type{display:none;}
   .ins-details{grid-template-columns:1fr 1fr;}
   .sponsor-card{width:140px;}
@@ -535,7 +540,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row">
           <span class="prog-time">08:30–09:00</span>
           <span class="prog-type t-accueil">Accueil</span>
-          <div class="prog-content">Accueil des participants — Visite des stands<span class="prog-duration">30 min</span></div>
+          <div class="prog-content">Accueil des participants — Visite des stands</div>
         </div>
       </div>
     </div>
@@ -594,7 +599,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row prog-break-row-light">
           <span class="prog-time">10:30–11:00</span>
           <span class="prog-type t-break">☕ Pause</span>
-          <div class="prog-content">Pause — Visite des Stands<span class="prog-duration">30 min</span></div>
+          <div class="prog-content">Pause — Visite des Stands</div>
         </div>
       </div>
     </div>
@@ -678,7 +683,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row prog-break-row-light">
           <span class="prog-time">12:30–13:30</span>
           <span class="prog-type t-dejeuner">🍽 Déjeuner</span>
-          <div class="prog-content">Pause Déjeuner — Visite des Stands<span class="prog-duration">60 min</span></div>
+          <div class="prog-content">Pause Déjeuner — Visite des Stands</div>
         </div>
       </div>
     </div>
@@ -764,7 +769,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row prog-break-row-light">
           <span class="prog-time">15:40–16:10</span>
           <span class="prog-type t-break">☕ Pause</span>
-          <div class="prog-content">Pause — Visite des Stands<span class="prog-duration">30 min</span></div>
+          <div class="prog-content">Pause — Visite des Stands</div>
         </div>
       </div>
     </div>
@@ -841,7 +846,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="prog-row">
           <span class="prog-time">18:20–18:30</span>
           <span class="prog-type t-discussion">Discussion</span>
-          <div class="prog-content">Discussion<span class="prog-duration">10 min</span></div>
+          <div class="prog-content">Discussion</div>
         </div>
       </div>
     </div>
