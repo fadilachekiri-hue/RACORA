@@ -498,7 +498,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 <div class="stats-band">
   <div class="stats-inner">
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">Hôpitaux AP-HP</div></div>
-    <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Participants</div></div>
+    <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Participants</div></div>
     <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Présentations</div></div>
     <div class="stat"><div class="stat-num">4ème</div><div class="stat-label">Édition</div></div>
   </div>
@@ -1141,7 +1141,13 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
 
 <script>
 
-var ADMIN_CODE = localStorage.getItem('racora_admin') || 'admin2026';
+var ADMIN_HASH_DEFAULT = '957a1842eaf8a8de6f1afd5e9f56f5052fe110e3feb88340b9252d086e0c1c4d';
+var ADMIN_HASH = localStorage.getItem('racora_admin_hash') || ADMIN_HASH_DEFAULT;
+
+async function sha256Hex(str){
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+}
 
 function openAdminLogin(){
   document.getElementById('adminLoginOverlay').classList.add('open');
@@ -1150,8 +1156,9 @@ function openAdminLogin(){
   setTimeout(function(){document.getElementById('adminPwdInput').focus();},120);
 }
 function closeAdminLogin(){document.getElementById('adminLoginOverlay').classList.remove('open');}
-function doAdminLogin(){
-  if(document.getElementById('adminPwdInput').value===ADMIN_CODE){
+async function doAdminLogin(){
+  var hash = await sha256Hex(document.getElementById('adminPwdInput').value);
+  if(hash===ADMIN_HASH){
     closeAdminLogin();
     enableFullAdminAccess();
   }else{
@@ -1159,7 +1166,13 @@ function doAdminLogin(){
     document.getElementById('adminPwdInput').select();
   }
 }
-function savePwd(){var p=document.getElementById('newAdminCode').value.trim();if(p.length<4){alert('Minimum 4 caractères.');return;}ADMIN_CODE=p;localStorage.setItem('racora_admin',p);alert('Mot de passe mis à jour !');}
+async function savePwd(){
+  var p=document.getElementById('newAdminCode').value.trim();
+  if(p.length<4){alert('Minimum 4 caractères.');return;}
+  ADMIN_HASH=await sha256Hex(p);
+  localStorage.setItem('racora_admin_hash',ADMIN_HASH);
+  alert('Mot de passe mis à jour ! Il ne sera actif que sur ce navigateur — pense à me dire le nouveau mot de passe si tu veux qu\'il soit permanent sur le site.');
+}
 function addSpeaker(){
   var n=document.getElementById('spkName').value.trim();
   var r=document.getElementById('spkRole').value.trim();
