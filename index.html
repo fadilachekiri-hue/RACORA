@@ -35,7 +35,7 @@
   --gold:#0055A4;
   --maroon:#8B1E3F;
   --maroon-dark:#6B1730;
-  --maroon-light:#E8A9BB;
+  --maroon-light:#C96A4E;
 }
 html{font-size:18px;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -161,27 +161,26 @@ section{padding:4rem 2rem;}
 .session-header-inner span:first-child{font-size:.84rem;font-weight:700;color:var(--text);display:block;}
 .session-time-badge,.sh-time{font-size:.7rem;color:var(--text3);margin-left:auto;white-space:nowrap;}
 .session-subtitle,.session-partner{display:block;font-size:.72rem;color:var(--text2);margin-top:.2rem;}
-.sh-blue{background:linear-gradient(90deg,#0055A4,#1976D2);}
-.sh-teal{background:linear-gradient(90deg,#00695C,#00897B);}
-.sh-purple{background:linear-gradient(90deg,#6A1B9A,#8E24AA);}
-.sh-green{background:linear-gradient(90deg,#2E7D32,#43A047);}
-.sh-orange,.sh-warm{background:linear-gradient(90deg,#E65100,#F57C00);}
-.sh-pause{background:#E1E5E9;}
-.sh-lunch{background:linear-gradient(90deg,#EF6C00,#F9A825);}
-.sh-blue .session-header-inner span:first-child,.sh-blue .session-subtitle,.sh-blue .session-partner,.sh-blue .session-title-text,
-.sh-teal .session-header-inner span:first-child,.sh-teal .session-subtitle,.sh-teal .session-partner,.sh-teal .session-title-text,
-.sh-purple .session-header-inner span:first-child,.sh-purple .session-subtitle,.sh-purple .session-partner,.sh-purple .session-title-text,
-.sh-green .session-header-inner span:first-child,.sh-green .session-subtitle,.sh-green .session-partner,.sh-green .session-title-text,
+.sh-blue{background:linear-gradient(90deg,#D6E9FA,#EAF4FD);}
+.sh-teal{background:linear-gradient(90deg,#CFEDE6,#E3F5F0);}
+.sh-purple{background:linear-gradient(90deg,#E6D9F0,#F1E9F8);}
+.sh-green{background:linear-gradient(90deg,#D7EFD9,#E8F6E9);}
+.sh-orange,.sh-warm{background:linear-gradient(90deg,#FDE1BD,#FEEFDA);}
+.sh-pause{background:#EDEFF1;}
+.sh-lunch{background:linear-gradient(90deg,#FCE0AE,#FDEDCF);}
+.sh-blue .session-header-inner span:first-child,.sh-blue .session-subtitle,.sh-blue .session-partner,.sh-blue .session-title-text{color:#003F7A;}
+.sh-teal .session-header-inner span:first-child,.sh-teal .session-subtitle,.sh-teal .session-partner,.sh-teal .session-title-text{color:#00695C;}
+.sh-purple .session-header-inner span:first-child,.sh-purple .session-subtitle,.sh-purple .session-partner,.sh-purple .session-title-text{color:#6A1B9A;}
+.sh-green .session-header-inner span:first-child,.sh-green .session-subtitle,.sh-green .session-partner,.sh-green .session-title-text{color:#2E7D32;}
 .sh-orange .session-header-inner span:first-child,.sh-orange .session-subtitle,.sh-orange .session-partner,.sh-orange .session-title-text,
-.sh-warm .session-header-inner span:first-child,.sh-warm .session-subtitle,.sh-warm .session-partner,.sh-warm .session-title-text,
-.sh-orange .session-title-text,.sh-warm .session-title-text,
-.sh-lunch .session-title-text{color:#fff;}
+.sh-warm .session-header-inner span:first-child,.sh-warm .session-subtitle,.sh-warm .session-partner,.sh-warm .session-title-text{color:#B4530A;}
+.sh-lunch .session-title-text{color:#A85D00;}
 .session-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.sbg-blue .session-dot,.sh-blue .session-dot{background:#fff;}
-.sbg-teal .session-dot,.sh-teal .session-dot{background:#fff;}
-.sbg-purple .session-dot,.sh-purple .session-dot{background:#fff;}
-.sbg-green .session-dot,.sh-green .session-dot{background:#fff;}
-.sbg-gold .session-dot,.sh-orange .session-dot,.sh-warm .session-dot{background:#fff;}
+.sbg-blue .session-dot,.sh-blue .session-dot{background:var(--blue);}
+.sbg-teal .session-dot,.sh-teal .session-dot{background:var(--teal);}
+.sbg-purple .session-dot,.sh-purple .session-dot{background:#7B1FA2;}
+.sbg-green .session-dot,.sh-green .session-dot{background:#2E7D32;}
+.sbg-gold .session-dot,.sh-orange .session-dot,.sh-warm .session-dot{background:#E65100;}
 .prog-row{display:grid;grid-template-columns:95px 85px 1fr;gap:.8rem;padding:.8rem 1.4rem;border-top:1px solid var(--border);align-items:start;}
 .prog-row:first-of-type{border-top:1px solid var(--border);}
 .prog-time{font-size:.73rem;color:var(--blue);font-weight:600;}
@@ -192,15 +191,15 @@ section{padding:4rem 2rem;}
 .badge-pause,.t-pause{background:#FFF8E1;color:#E65100;}
 .badge-atelier{background:#E8F5E9;color:#2E7D32;}
 .badge-oral{background:#E3F2FD;color:#1565C0;}
-.t-accueil{background:#F57C00;color:#fff;}
-.t-bienvenue{background:#0055A4;color:#fff;}
-.t-session{background:#1565C0;color:#fff;}
-.t-break{background:#6D4C41;color:#fff;}
-.t-table{background:#7B1FA2;color:#fff;}
-.t-dejeuner{background:#EF6C00;color:#fff;}
-.t-conf{background:#F9A825;color:#1A2B3C;}
-.t-discussion{background:#2E7D32;color:#fff;}
-.t-cloture{background:var(--maroon);color:#fff;}
+.t-accueil{background:#FDE7CC;color:#B4530A;}
+.t-bienvenue{background:#D6E9FA;color:#003F7A;}
+.t-session{background:#D9E9FB;color:#0D5DAA;}
+.t-break{background:#E4D9D4;color:#5D4037;}
+.t-table{background:#EDE0F5;color:#6A1B9A;}
+.t-dejeuner{background:#FDE0BC;color:#A85D00;}
+.t-conf{background:#FCEFC7;color:#8A6100;}
+.t-discussion{background:#DCEFDD;color:#2E7D32;}
+.t-cloture{background:#F1D9E1;color:var(--maroon);}
 .prog-content{font-size:.82rem;color:var(--text);}
 .prog-speaker{display:block;font-size:.71rem;color:var(--text3);margin-top:.2rem;}
 .prog-plenary-row-light,.prog-plenary-row{background:linear-gradient(90deg,rgba(0,85,164,.03),transparent);}
@@ -443,7 +442,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
       <div class="hcs-row"><div class="hcs-icon">📅</div><div><div class="hcs-label">Date</div><div class="hcs-val">Vendredi 11 décembre 2026</div></div></div>
       <div class="hcs-row"><div class="hcs-icon">📍</div><div><div class="hcs-label">Lieu</div><div class="hcs-val">Maison de la Chimie<br><span style="font-size:.78rem;opacity:.7;">28 rue Saint-Dominique, Paris 7e</span></div></div></div>
       <div class="hcs-row"><div class="hcs-icon">🕗</div><div><div class="hcs-label">Horaires</div><div class="hcs-val">08h30 – 18h00</div></div></div>
-      <div class="hcs-row"><div class="hcs-icon">🏥</div><div><div class="hcs-label">Organisation</div><div class="hcs-val">Collégiale AP-HP<br><span style="font-size:.78rem;opacity:.7;">5 hôpitaux d'oncologie-radiothérapie</span></div></div></div>
+      <div class="hcs-row"><div class="hcs-icon">🏥</div><div><div class="hcs-label">Organisation</div><div class="hcs-val">Collégiale d'Oncologie-Radiothérapie de l'AP-HP<br><span style="font-size:.78rem;opacity:.7;">5 services d'Oncologie-Radiothérapie</span></div></div></div>
     </div>
   </div>
 </section>
