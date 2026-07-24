@@ -159,6 +159,8 @@ section{padding:4rem 2rem;}
 .speaker-title{font-size:.72rem;color:var(--text3);line-height:1.4;margin-top:.2rem;}
 .speaker-hospital{font-size:.7rem;color:var(--blue);font-weight:500;margin-top:.2rem;}
 .speaker-empty{text-align:center;color:var(--text3);font-size:.82rem;padding:2rem;grid-column:1/-1;}
+.speaker-avatar{width:60px;height:60px;border-radius:50%;margin:0 auto .8rem;background:linear-gradient(135deg,var(--blue),var(--sky));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;}
+.speaker-status{display:inline-block;margin-top:.5rem;font-size:.58rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .6rem;border-radius:20px;background:#FDE7CC;color:#B4530A;}
 
 /* PROGRAMME */
 #programme{background:var(--bg);}
@@ -542,7 +544,38 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
   <div class="container">
     <p class="section-label">Intervenants</p>
     <h2 class="section-title">Les experts présents</h2>
-    <div class="speakers-grid" id="speakersGrid"><p class="no-content">Intervenants à annoncer prochainement.</p></div>
+    <div class="speakers-grid" id="speakersGrid">
+      <div class="speaker-card"><div class="speaker-avatar">LB</div><div class="speaker-name">L. Belaidi</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">YB</div><div class="speaker-name">Y. Belkacemi</div><div class="speaker-title">Orateur & Modérateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">JB</div><div class="speaker-name">J-E. Bibault</div><div class="speaker-title">Modérateur</div><div class="speaker-hospital">HEGP</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">GC</div><div class="speaker-name">G. Camprodon</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">PSL</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">GC</div><div class="speaker-name">G. Chabin</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Varian</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">CC</div><div class="speaker-name">C. Chargari</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">PSL</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">LC</div><div class="speaker-name">L. Collignon</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Elekta</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">GC</div><div class="speaker-name">G. Coraggio</div><div class="speaker-title">Orateur & Modérateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">KD</div><div class="speaker-name">K. Debbi</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">MD</div><div class="speaker-name">M-F Doval</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">IFMM-AP-HP, Picpus</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">CD</div><div class="speaker-name">C. Durdux</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HEGP</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">CE</div><div class="speaker-name">C. Evin</div><div class="speaker-title">Modérateur</div><div class="speaker-hospital">TNN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">SF</div><div class="speaker-name">S. Frikha</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">DG</div><div class="speaker-name">D. Gruson</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Ethik-IA, Paris</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">FH</div><div class="speaker-name">F. Huguet</div><div class="speaker-title">Orateur & Modérateur</div><div class="speaker-hospital">TNN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">RI</div><div class="speaker-name">R. Itti</div><div class="speaker-title">Modérateur</div><div class="speaker-hospital">SLS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">JJ</div><div class="speaker-name">J. Jacob</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">PSL</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">WK</div><div class="speaker-name">W. Ksouri</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">CL</div><div class="speaker-name">C. Lasar</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">JL</div><div class="speaker-name">J. Lemonier</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">UNICANCER</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">HM</div><div class="speaker-name">H. Mammar</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Institut Curie, Saint-Cloud</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">NP</div><div class="speaker-name">N. Paragios</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Therapanacea, Paris</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">JP</div><div class="speaker-name">J. Pieuchard</div><div class="speaker-title">Modérateur</div><div class="speaker-hospital">DRH</div><span class="speaker-status">À confirmer</span></div>
+      <div class="speaker-card"><div class="speaker-avatar">SP</div><div class="speaker-name">S. Poli-Flament</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">TNN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">LQ</div><div class="speaker-name">L. Quero</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">SLS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">NR</div><div class="speaker-name">N. Revel</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Directeur Général AP-HP</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">CR</div><div class="speaker-name">C. Robert</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">Institut Gustave Roussy</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">AS</div><div class="speaker-name">A. Sobreira</div><div class="speaker-title">Orateur</div><div class="speaker-hospital">HEGP</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">NT</div><div class="speaker-name">N-H To</div><div class="speaker-title">Modérateur</div><div class="speaker-hospital">HMN</div></div>
+      <div class="speaker-card"><div class="speaker-avatar">ST</div><div class="speaker-name">S. Toublanc</div><div class="speaker-title">Orateur & Modérateur</div><div class="speaker-hospital">HEGP</div></div>
+    </div>
   </div>
 </section>
 
@@ -599,7 +632,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les études cliniques et projets du GRAPP
-            <span class="prog-speaker">G. Coraggio (HMN)<br>M-A. Belaid (GRAPP)</span>
+            <span class="prog-speaker">G. Coraggio (HMN)<br>L. Belaidi (HMN)</span>
           </div>
         </div>
         <div class="prog-row">
