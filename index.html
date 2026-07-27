@@ -197,10 +197,10 @@ section{padding:4rem 2rem;}
 .sbg-purple .session-dot,.sh-purple .session-dot{background:#7B1FA2;}
 .sbg-green .session-dot,.sh-green .session-dot{background:#2E7D32;}
 .sbg-gold .session-dot,.sh-orange .session-dot,.sh-warm .session-dot{background:#E65100;}
-.prog-row{display:grid;grid-template-columns:95px 85px 1fr;gap:.8rem;padding:.8rem 1.4rem;border-top:1px solid var(--border);align-items:start;}
+.prog-row{display:grid;grid-template-columns:95px 120px 1fr;gap:.8rem;padding:.8rem 1.4rem;border-top:1px solid var(--border);align-items:start;}
 .prog-row:first-of-type{border-top:1px solid var(--border);}
 .prog-time{font-size:.73rem;color:var(--blue);font-weight:600;white-space:nowrap;}
-.prog-type{display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;}
+.prog-type{display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-align:center;white-space:nowrap;max-width:100%;}
 .prog-badge,.badge-keynote,.t-keynote{background:#EBF3FC;color:#0055A4;}
 .badge-lecture,.t-lecture{background:#E0F4F1;color:#00695C;}
 .badge-panel,.t-panel{background:#F0EBF8;color:#6A1B9A;}
@@ -609,7 +609,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <div class="session-block">
       <div class="session-header sh-orange">
         <span class="session-time-badge">08:30 → 09:00</span>
-        <span class="session-title-text">🚪 Accueil des participants — Visite des stands</span>
+        <span class="session-title-text">🚪 Accueil des participants</span>
       </div>
     </div>
 
@@ -619,6 +619,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         <div class="session-header-inner">
           <span class="session-title-text">🔬 SESSION I — Questions d'actualités en recherche clinique en Oncologie-Radiothérapie à l'AP-HP</span>
           <span class="session-partner">En partenariat avec le GRAPP</span>
+          <span class="session-partner">Modération : G. Coraggio (HMN) · N-H To (HMN) · C. Evin (TNN)</span>
         </div>
       </div>
       <div class="session-items">
@@ -628,7 +629,6 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           <div class="prog-content">
             Mot de bienvenue et introduction
             <span class="prog-speaker">Y. Belkacemi (HMN)<br>C. Chargari (PSL)<br>C. Durdux (HEGP)<br>F. Huguet (TNN)<br>L. Quero (SLS)</span>
-            <span class="prog-moderation">Modération :<br>G. Coraggio (HMN)<br>N-H To (HMN)<br>C. Evin (TNN)</span>
           </div>
         </div>
         <div class="prog-row">
@@ -706,8 +706,8 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
         </div>
         <div class="prog-row" style="background:rgba(123,31,162,.03);">
           <span class="prog-time">11:45</span>
-          <span class="prog-type t-table">Constructeurs</span>
-          <div class="prog-content" style="font-style:italic;font-weight:400;color:var(--text3);">Le point de vue des Constructeurs et exemples technologiques pratiques — G. Chabin (Varian) · L. Collignon (Elekta)</div>
+          <span class="prog-type t-session">Intervention</span>
+          <div class="prog-content" style="font-style:italic;font-weight:400;color:var(--text3);">Le point de vue des Constructeurs et exemples technologiques pratiques</div>
         </div>
         <div class="prog-row">
           <span class="prog-time">11:45–12:00</span>
@@ -748,18 +748,9 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
     <div class="session-block">
       <div class="session-header sh-teal">
         <div class="session-header-inner">
-          <span class="session-title-text">🎓 Conférence Plénière I — Situation des MERMs en Radiothérapie à l'AP-HP</span>
+          <span class="session-title-text">🎓 Conférence Plénière I — Situation des MERMs en Radiothérapie à l'AP-HP : états des lieux et perspectives institutionnelles vues de l'école à l'intégration dans les services</span>
           <span class="session-subtitle">13:30 → 14:00</span>
-        </div>
-      </div>
-      <div class="session-items">
-        <div class="prog-row prog-plenary-row-light">
-          <span class="prog-time">13:30–14:00</span>
-          <span class="prog-type t-conf">Plénière I</span>
-          <div class="prog-content">
-            Situation des MERMs en Radiothérapie à l'AP-HP : états des lieux et perspectives institutionnelles vues de l'école à l'intégration dans les services
-            <span class="prog-speaker">N. Revel (Directeur Général AP-HP)<br>M-F Doval (IFMM-AP-HP, Picpus)</span>
-          </div>
+          <span class="session-partner">Orateurs : N. Revel (Directeur Général AP-HP) · M-F Doval (IFMM-AP-HP, Picpus)</span>
         </div>
       </div>
     </div>
@@ -824,26 +815,6 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
       </div>
     </div>
 
-    <!-- CONFÉRENCE PLÉNIÈRE II -->
-    <div class="session-block">
-      <div class="session-header sh-teal">
-        <div class="session-header-inner">
-          <span class="session-title-text">🎓 Conférence Plénière II — Pratiques en Stéréotaxie et Associations aux Nouvelles Molécules : Risques et Bénéfice en 2026</span>
-          <span class="session-subtitle">16:10 → 16:40</span>
-        </div>
-      </div>
-      <div class="session-items">
-        <div class="prog-row prog-plenary-row-light">
-          <span class="prog-time">16:10–16:40</span>
-          <span class="prog-type t-conf">Plénière II</span>
-          <div class="prog-content">
-            Pratiques en Stéréotaxie et Associations aux Nouvelles Molécules : Risques et Bénéfice en 2026
-            <span class="prog-speaker">K. Debbi (HMN)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- SESSION IV -->
     <div class="session-block">
       <div class="session-header sh-warm">
@@ -854,7 +825,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
       </div>
       <div class="session-items">
         <div class="prog-row">
-          <span class="prog-time">16:40–17:00</span>
+          <span class="prog-time">16:10–16:30</span>
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Pourquoi et comment la stéréotaxie devient incontournable en cancérologie : rationnel et pratiques ?
@@ -862,7 +833,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           </div>
         </div>
         <div class="prog-row">
-          <span class="prog-time">17:00–17:20</span>
+          <span class="prog-time">16:30–16:50</span>
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Challenges pratiques en Physique pour une planification optimale des traitements en conditions stéréotaxiques
@@ -870,7 +841,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           </div>
         </div>
         <div class="prog-row">
-          <span class="prog-time">17:20–17:40</span>
+          <span class="prog-time">16:50–17:10</span>
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les challenges de la ré-irradiation : des pré-requis à la routine pratique — <em>L'avis du médecin</em>
@@ -878,7 +849,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           </div>
         </div>
         <div class="prog-row">
-          <span class="prog-time">17:40–18:00</span>
+          <span class="prog-time">17:10–17:30</span>
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Les challenges de la ré-irradiation : des pré-requis à la routine pratique — <em>L'avis du physicien</em>
@@ -886,7 +857,7 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           </div>
         </div>
         <div class="prog-row">
-          <span class="prog-time">18:00–18:20</span>
+          <span class="prog-time">17:30–17:50</span>
           <span class="prog-type t-session">Conférence</span>
           <div class="prog-content">
             Photons ou Protons pour les ré-irradiations : quels critères pour définir les indications et pratiques en 2026 ?
@@ -894,9 +865,20 @@ footer{background:#1A2B3C;padding:2.5rem 2rem;padding-bottom:calc(2.5rem + 56px)
           </div>
         </div>
         <div class="prog-row">
-          <span class="prog-time">18:20–18:30</span>
+          <span class="prog-time">17:50–18:00</span>
           <span class="prog-type t-discussion">Discussion</span>
           <div class="prog-content">Discussion</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFÉRENCE PLÉNIÈRE II -->
+    <div class="session-block">
+      <div class="session-header sh-teal">
+        <div class="session-header-inner">
+          <span class="session-title-text">🎓 Conférence Plénière II — Pratiques en Stéréotaxie et Associations aux Nouvelles Molécules : Risques et Bénéfice en 2026</span>
+          <span class="session-subtitle">18:00 → 18:30</span>
+          <span class="session-partner">Orateur : K. Debbi (HMN)</span>
         </div>
       </div>
     </div>
